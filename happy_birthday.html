@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      font-family: 'Jua', sans-serif;
+      background: linear-gradient(to top, #ffe4e1, #fff0f5);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #ffb6c1;
+      padding: 50px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      color: white;
+      text-shadow: 2px 2px 4px #ff69b4;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    #gallery img {
+      width: 250px;
+      height: auto;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+    #guestbook textarea {
+      width: 80%;
+      height: 80px;
+      margin: 10px auto;
+      display: block;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+    #guestbook button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #messages p {
+      background-color: #fff0f5;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 5px auto;
+      width: 80%;
+    }
+    footer {
+      background-color: #ffc0cb;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    .balloon {
+      position: absolute;
+      width: 50px;
+      height: 70px;
+      background: pink;
+      border-radius: 50% 50% 50% 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-200px); }
+      100% { transform: translateY(0); }
+    }
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffb6c1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <!-- 인트로 화면 -->
+  <div id="intro">
+    <h1 class="animate__animated animate__bounceIn" style="font-size:3em; color:white;">🎉 생일 축하해! 🎂</h1>
+  </div>
+
+  <!-- 배경 음악 -->
+  <audio id="bgm" src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" loop></audio>
+
+  <header class="animate__animated animate__fadeInDown">
+    <h1>🎉 Happy Birthday, 지민이의 19번째 생일! 🎂</h1>
+  </header>
+
+  <section id="message">
+    <h2>🎈 생일 축하해 🎈</h2>
+    <p class="animate__animated animate__fadeInUp">오늘은 네가 정식으로 성인이 되는 생일날이야!<br>항상 밝고 따뜻한 네 모습 덕분에 다들 행복했어.<br>진심으로 생일 축하해! 🎁</p>
+  </section>
+
+<section id="gallery">
+  <h2>📸 함께한 추억들</h2>
+  <a href="gallery.html">
+    <img src="images/49.jpg" alt="대표 추억 사진" style="cursor:pointer;">
+    <p style="color:#ff69b4;">클릭해서 더 많은 사진 보기 📷</p>
+  </a>
+</section>
+
+
+  <section id="video">
+    <h2>🎥 동영상 모음</h2>
+    <a href="video.html">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/AWrXKyFzg0o?si=M8GQXUUBqn1Zdbii" frameborder="0" allowfullscreen></iframe>
+    <p style="color:#ff69b4;">클릭해서 동영상 보러가기 📷</p>
+  </a>
+</section>
+
+<!-- 축하 멘트 버튼 -->
+<section id="wishes">
+  <h2>🎈 무작위 축하 메시지 🎈</h2>
+  <button onclick="showRandomWish()" style="padding: 12px 24px; font-size: 1.1em; background-color: #ff69b4; color: white; border: none; border-radius: 10px; cursor: pointer;">
+    💌 눌러볼래?
+  </button>
+  <p id="wishText" style="margin-top: 20px; font-size: 1.3em; color: #ff1493;"></p>
+</section>
+
+  <section id="guestbook">
+    <h2>💌 방명록 💌</h2>
+    <textarea id="messageInput" placeholder="축하 메시지를 적어주세요!"></textarea>
+    <button onclick="addMessage()">남기기</button>
+    <div id="messages"></div>
+  </section>
+<a href="https://instagram.com/imlnob/" target="_blank" style="color: #E1306C; text-decoration: none; font-size: 1.2em;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:24px; vertical-align: middle; margin-right: 8px;">
+  @jimin_insta
+</a>
+
+  <footer>
+    <p>Made with 💖 by @hoelin_06</p>
+  </footer>
+
+  <script>
+    function addMessage() {
+      const input = document.getElementById('messageInput');
+      const value = input.value.trim();
+      if (value) {
+        const p = document.createElement('p');
+        p.textContent = value;
+        document.getElementById('messages').appendChild(p);
+        input.value = '';
+      }
+    }
+
+    // 풍선 효과 추가 (랜덤 위치)
+    for (let i = 0; i < 10; i++) {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = Math.random() * window.innerWidth + 'px';
+      balloon.style.top = Math.random() * window.innerHeight + 'px';
+      document.body.appendChild(balloon);
+    }
+
+    // 인트로 몇 초 후 제거
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('intro').style.display = 'none';
+      }, 3000); // 3초
+
+      // 배경음악 재생
+      const bgm = document.getElementById('bgm');
+      bgm.volume = 0.3;
+      bgm.play().catch(() => {
+        const btn = document.createElement('button');
+        btn.textContent = "🎵 배경음악 재생";
+        btn.style.position = 'fixed';
+        btn.style.top = '20px';
+        btn.style.right = '20px';
+        btn.style.zIndex = '10000';
+        btn.style.padding = '10px';
+        btn.style.background = '#ff69b4';
+        btn.style.color = 'white';
+        btn.style.border = 'none';
+        btn.style.borderRadius = '10px';
+        document.body.appendChild(btn);
+        btn.addEventListener('click', () => {
+          bgm.play();
+          btn.remove();
+        });
+      });
+    });
+  </script>
+<script>
+  // 🎁 무작위 축하 멘트
+  const wishes = [
+    "오늘 하루 네가 주인공이야 🎉",
+    "웃는 얼굴만큼 예쁜 사람은 없어 😊",
+    "나랑오래오래친하게지내자~~ 💫",
+    "너랑 친구인 게 행운이야 🍀",
+    "정지민 바보! ✨",
+    "지미미야! 생일 축하해 만수무강해! 🎂"
+  ];
+
+  function showRandomWish() {
+    const random = wishes[Math.floor(Math.random() * wishes.length)];
+    const wishText = document.getElementById("wishText");
+    wishText.textContent = random;
+
+    // 간단한 애니메이션 효과 (선택)
+    wishText.classList.add("animate__animated", "animate__fadeInUp");
+    setTimeout(() => {
+      wishText.classList.remove("animate__fadeInUp");
+    }, 1000);
+  }
+
+  // 🎇 축하 폭죽 애니메이션 (confetti.js)
+  function launchConfetti() {
+    const duration = 3 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+
+    function randomInRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    const interval = setInterval(function() {
+      const timeLeft = animationEnd - Date.now();
+
+      if (timeLeft <= 0) {
+        return clearInterval(interval);
+      }
+
+      const particleCount = 50 * (timeLeft / duration);
+      confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+      confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+    }, 250);
+  }
+
+  // 페이지 로드 시 폭죽 실행
+  window.addEventListener('load', () => {
+    setTimeout(launchConfetti, 1000); // 1초 후 실행
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+</body>
+</html>
