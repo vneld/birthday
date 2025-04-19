@@ -7,6 +7,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <style>
+   #night-sky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to top, #0d1b2a, #1b263b);
+}
+
     body {
       font-family: 'Jua', sans-serif;
       background: linear-gradient(to top, #ffe4e1, #fff0f5);
@@ -43,7 +53,16 @@
     video {
       width: 100%;
       border-radius: 15px;
-    }
+    } 
+     iframe {
+       width: 100%;
+       height: 400px;
+       transform: scale(1.2);
+       transform-origin: top left;
+       border-radius: 15px;
+       border: none;
+     }
+
     p.caption {
       color: #ff69b4;
       margin-top: 10px;
@@ -66,129 +85,125 @@
   </style>
 </head>
 <body>
-
+   <canvas id="night-sky"></canvas>
   <h1 class="animate__animated animate__fadeInDown">🎬 지민이의 추억 영상 모음</h1>
 
-  <div class="video-container">
-    <div class="video-card animate__animated animate__zoomIn">
-      <video controls>
-        <source src="video/1.mp4" type="video/mp4">
-        브라우저가 video 태그를 지원하지 않아요.
-      </video>
-      <p class="caption"></p>
-    </div>
 
-    <div class="video-card animate__animated animate__zoomIn animate__delay-1s">
-      <video controls>
-        <source src="video/2.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1cPcu0H2p8l2VwbqtzAgRhiMIH4M52bgL/preview" allow="autoplay"></iframe><p>영상 1</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1RWIgoY-fjsFeyMywQYdtskqgn7jrloqr/preview" allow="autoplay"></iframe><p>영상 2</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1lS6vjEL3FzsjoSST0P1FZ5QE49xEpSVw/preview" allow="autoplay"></iframe><p>영상 3</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1CGtL0CLzxmvn8KnTLC6ghIN_NMTpqemZ/preview" allow="autoplay"></iframe><p>영상 4</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1ZNPAv-T0NU0h6FBw_khly1--V-eezoFd/preview" allow="autoplay"></iframe><p>영상 5</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1z_PDEbZG7qfCA77947TFUP9MgEbP4J8N/preview" allow="autoplay"></iframe><p>영상 6</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1aFPVqu52gXeLthPkKcSkLKf9YihQzFkQ/preview" allow="autoplay"></iframe><p>영상 7</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1LRSP6FjTaECvH7wih1maqbBem_BpopTo/preview" allow="autoplay"></iframe><p>영상 8</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1N-wtX65u0ZPoE11wI6ijdCYH55G-O5Aj/preview" allow="autoplay"></iframe><p>영상 9</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1cO-90Z3tjNOZaLXxEaBM__UwySmD927U/preview" allow="autoplay"></iframe><p>영상 10</p></div>
 
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/3.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1ErVu4moPqwdXJ0y-i6NZ13Xf9vBG3J8r/preview" allow="autoplay"></iframe><p>영상 11</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1g8TOD_G__XNRg8x2sMZTqMcG7i9MqgEo/preview" allow="autoplay"></iframe><p>영상 12</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/11v8bpShX9__GE1tScKjocTSg4WVC-ndT/preview" allow="autoplay"></iframe><p>영상 13</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1jmqJHbeLQn5Gn7B31bCorrUQPQFdRT_K/preview" allow="autoplay"></iframe><p>영상 14</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1dy4YLQvDNKHT10Q2H03ckdrzjJ9Kp7Vc/preview" allow="autoplay"></iframe><p>영상 15</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1m2riIqehGZZdYAAERiz4ft1i4p_LvqXF/preview" allow="autoplay"></iframe><p>영상 16</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/12Vlt2c2jFjPHddAH-2N6WE1RxAQNJwlJ/preview" allow="autoplay"></iframe><p>영상 17</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1Gle1IRCUFUgd7rSLKPtLVkUmm1o3gRwf/preview" allow="autoplay"></iframe><p>영상 18</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1yl9LyTJ4VhO2mWlOr_d-KE0d4CIq1pSE/preview" allow="autoplay"></iframe><p>영상 19</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1usMepdXNIdAuz5CocEa8EW7-g5M2RV2Q/preview" allow="autoplay"></iframe><p>영상 20</p></div>
 
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/4.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/5.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/6.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/7.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-     <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/8.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-     <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/9.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-     <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/10.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-     <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/11.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/12.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/13.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/14.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/15.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/16.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/17.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/18.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
-    <div class="video-card animate__animated animate__zoomIn animate__delay-2s">
-      <video controls>
-        <source src="video/19.mp4" type="video/mp4">
-      </video>
-      <p class="caption"></p>
-    </div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1LhoSlR-U4xsw7OrG-12eXY9Ae6nv92jL/preview" allow="autoplay"></iframe><p>영상 21</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1uMJHPomw_9-fNIO_X1xJ2s64Bfl-r6_6/preview" allow="autoplay"></iframe><p>영상 22</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1xBNeNJsT7Waz_zbqBcWUC3cP4QA_imfm/preview" allow="autoplay"></iframe><p>영상 23</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1aKUPVU7dQYtvJnEwoxLZCWxwYSsKQOdI/preview" allow="autoplay"></iframe><p>영상 24</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1QqHl2huMoQO08oJit8fTdPNC-zhPsenK/preview" allow="autoplay"></iframe><p>영상 25</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1eJpdY-B5SHPLg965ZowgeG7Da-kW7twJ/preview" allow="autoplay"></iframe><p>영상 26</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1Kgya-oCcRlUORh9u2uzSYPbT0dJ3Tn-N/preview" allow="autoplay"></iframe><p>영상 27</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/1up_1UEXns-YOyvnurYHMVyKu3qbsOPYe/preview" allow="autoplay"></iframe><p>영상 28</p></div>
+    <div class="video-card"><iframe src="https://drive.google.com/file/d/17w7tTk33s6UWRfEcZ6sVbEDI0h_dcPlt/preview" allow="autoplay"></iframe><p>영상 29</p></div>
+
   </div>
+<script>
+const canvas = document.getElementById('night-sky');
+const ctx = canvas.getContext('2d');
+let stars = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// 별 초기화
+for (let i = 0; i < 150; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.5,
+    opacity: Math.random(),
+    speed: Math.random() * 0.5 + 0.2
+  });
+}
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = '#ffffff';
+  for (let star of stars) {
+    ctx.globalAlpha = star.opacity;
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fill();
+
+    // 반짝이게 만들기
+    star.opacity += (Math.random() - 0.5) * 0.05;
+    if (star.opacity < 0.1) star.opacity = 0.1;
+    if (star.opacity > 1) star.opacity = 1;
+  }
+  ctx.globalAlpha = 1;
+}
+
+// 별똥별
+let shootingStar = {
+  x: -100,
+  y: -100,
+  length: 300,
+  speed: 8,
+  active: false
+};
+
+function drawShootingStar() {
+  if (!shootingStar.active && Math.random() < 0.002) {
+    shootingStar.x = Math.random() * canvas.width;
+    shootingStar.y = Math.random() * canvas.height / 2;
+    shootingStar.active = true;
+  }
+
+  if (shootingStar.active) {
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(shootingStar.x, shootingStar.y);
+    ctx.lineTo(shootingStar.x - shootingStar.length, shootingStar.y + shootingStar.length);
+    ctx.stroke();
+
+    shootingStar.x += shootingStar.speed;
+    shootingStar.y -= shootingStar.speed;
+
+    if (shootingStar.x > canvas.width || shootingStar.y < 0) {
+      shootingStar.active = false;
+    }
+  }
+}
+
+function animate() {
+  drawStars();
+  drawShootingStar();
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 
   <a href="happy_birthday.html" class="back-link">← 메인으로 돌아가기</a>
 
