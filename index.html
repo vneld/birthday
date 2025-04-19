@@ -152,16 +152,33 @@
   </footer>
 
   <script>
-    function addMessage() {
-      const input = document.getElementById('messageInput');
-      const value = input.value.trim();
-      if (value) {
-        const p = document.createElement('p');
-        p.textContent = value;
-        document.getElementById('messages').appendChild(p);
-        input.value = '';
-      }
+  function addMessage() {
+    const input = document.getElementById('messageInput');
+    const value = input.value.trim();
+    if (value) {
+      const messages = JSON.parse(localStorage.getItem('guestMessages') || '[]');
+      messages.push(value);
+      localStorage.setItem('guestMessages', JSON.stringify(messages));
+      renderMessages();
+      input.value = '';
     }
+  }
+
+  function renderMessages() {
+    const messages = JSON.parse(localStorage.getItem('guestMessages') || '[]');
+    const container = document.getElementById('messages');
+    container.innerHTML = '';
+    messages.forEach(msg => {
+      const p = document.createElement('p');
+      p.textContent = msg;
+      container.appendChild(p);
+    });
+  }
+
+  window.addEventListener('load', () => {
+    // 기존에 있던 인트로 제거, 배경음악 등 여기에 포함되어 있겠지?
+    renderMessages(); // ✅ 페이지 로드될 때 메시지 불러오기
+  });
 
     // 풍선 효과 추가 (랜덤 위치)
     for (let i = 0; i < 10; i++) {
